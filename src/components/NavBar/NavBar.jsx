@@ -1,31 +1,39 @@
+import React from 'react';
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-import { Navbar, Container, Nav } from 'react-bootstrap';
-const NavBar = ({ user, handleSignout }) => {
+import './NavBar.css';
+const MyNavbar = ({ user, handleSignout }) => {
   return (
-    <Navbar bg="light" data-bs-theme="light">
-      <Container>
-        <Navbar.Brand href="/">Navbar</Navbar.Brand>
-        <Nav className="me-auto">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Navbar.Brand as={Link} to="/">
+        <img src="/pic/flightlogo.png" alt="Logo" className='logo'/>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav>
           {user ? (
             <>
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="#features">Booking</Nav.Link>
-              <Nav.Link href="#pricing">About us</Nav.Link>
-              <Nav.Link onClick={handleSignout} href="">Sign Out</Nav.Link>
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="" onClick={handleSignout}>
+                Sign Out
+              </Nav.Link>
             </>
           ) : (
             <>
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/signin">Sign In</Nav.Link>
-              <Nav.Link href="/signup">Sign Up</Nav.Link>
+              <Nav.Link as={Link} to="/signin">
+                Sign In
+              </Nav.Link>
+              <Nav.Link as={Link} to="/signup">
+                Sign Up
+              </Nav.Link>
             </>
           )}
         </Nav>
-      </Container>
+      </Navbar.Collapse>
     </Navbar>
   );
-}
+};
 
-export default NavBar;
-
+export default MyNavbar;
