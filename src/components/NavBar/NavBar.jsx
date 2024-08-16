@@ -6,7 +6,7 @@ const MyNavbar = ({ user, handleSignout }) => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Navbar.Brand as={Link} to="/">
-        <img src="/pic/flightlogo.png" alt="Logo" className='logo'/>
+        <img src="/pic/flight.jpg" alt="Logo" className='logo'/>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

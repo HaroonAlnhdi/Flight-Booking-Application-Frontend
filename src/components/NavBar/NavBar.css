@@ -1,11 +1,12 @@
 .logo {
 
     width: 30vw;
-    height: 15vh;
+    height: 17vh;
 
 }
 
-.custom-navbar{
+.nav-link{
 
-    color: red !important;
+    color: #472f73 !important;
+    font-weight: bold !important;
 }
