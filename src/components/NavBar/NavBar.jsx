@@ -22,6 +22,9 @@ const MyNavbar = ({ user, handleSignout }) => {
             </>
           ) : (
             <>
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
               <Nav.Link as={Link} to="/signin">
                 Sign In
               </Nav.Link>
