@@ -24,7 +24,7 @@ const MyNavbar = ({ user, handleSignout }) => {
               <Nav.Link as={Link} to="/">
                 <AiOutlineHome /> Home
               </Nav.Link>
-              <Nav.Link as={Link} to="#">
+              <Nav.Link as={Link} to="aboutus">
                 <AiOutlineInfoCircle /> About
               </Nav.Link>
               <Nav.Link as={Link} to="#">
