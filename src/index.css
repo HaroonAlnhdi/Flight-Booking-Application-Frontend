@@ -10,7 +10,7 @@ body::-webkit-scrollbar{
 }
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #6366F1;
   text-decoration: inherit;
 }
 a:hover {
@@ -25,12 +25,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #535bf2;
+  background-color: #6366F1;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: #191c60;
+  background-color: #4338CA
 }
 button:focus,
 button:focus-visible {

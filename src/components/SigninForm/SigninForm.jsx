@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/authService";
 import "./SigninForm.css";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const SigninForm = (props) => {
   const navigate = useNavigate();
@@ -41,8 +42,8 @@ const SigninForm = (props) => {
           <source src="https://videos.pexels.com/video-files/2897277/2897277-hd_1920_1080_30fps.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="formConterinar">
-        <h1>Log In</h1>
+      <div className="formContainer">
+        <h1>Weclcome to Fligh Booking</h1>
         <p>{message}</p>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <div>
@@ -71,10 +72,13 @@ const SigninForm = (props) => {
           </div>
           <div>
             <button>Log In</button>
-            <Link to="/">
-              <button>Cancel</button>
-            </Link>
+            <p>Don't have an account?<Link to="/"> Register</Link></p>
           </div>
+              <div className="icon">
+                <FaFacebook className="social-icon" />
+                <FaTwitter className="social-icon" />
+                <FaInstagram className="social-icon" />
+              </div>
         </form>
       </div>
     </main>
