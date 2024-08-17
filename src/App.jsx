@@ -9,6 +9,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import SignupForm from './components/SignupForm/SignupForm';
 import SigninForm from './components/SigninForm/SigninForm'
 
+import Footer from './components/Footer/Footer';
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
 
@@ -30,6 +31,8 @@ const App = () => {
         <Route path="/signin" element={<SigninForm setUser={setUser}/>} />
 
       </Routes>
+
+      <Footer/>
     </>
   );
 };
