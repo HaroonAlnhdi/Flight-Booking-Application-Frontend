@@ -81,3 +81,12 @@
   .formContainer p {
     margin-top: 0.7rem;
   }
+
+  /* @media (max-width: 768px) {} */
+
+  /* for Mobile */
+  @media (max-width: 480px)  {
+    .formContainer {
+        width: 90vw;
+    }
+  }

@@ -37,11 +37,14 @@ const SigninForm = (props) => {
 
   return (
     <main className="signMain">
+
+      {/* Video in Background */}
       <div className="video-container">
         <video autoPlay loop muted playsInline className="backVideo">
           <source src="https://videos.pexels.com/video-files/2897277/2897277-hd_1920_1080_30fps.mp4" type="video/mp4" />
         </video>
       </div>
+      
       <div className="formContainer">
         <h1>Weclcome to Fligh Booking</h1>
         <p>{message}</p>
