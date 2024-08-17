@@ -77,14 +77,7 @@ const AboutUs = () => {
         </p>
       </section>
 
-      <section className="contact">
-        <h2 className="section-title">Contact Us</h2>
-        <p >
-          Have questions or need assistance? Feel free to reach out to us at{" "}
-          <a href="mailto:info@mybrandairlines.com">info@mybrandairlines.com</a>{" "}
-          or call us at +1-800-123-4567. We look forward to hearing from you!
-        </p>
-      </section>
+ 
     </div>
   );
 };
