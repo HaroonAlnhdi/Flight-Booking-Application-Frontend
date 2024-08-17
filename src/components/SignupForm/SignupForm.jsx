@@ -40,7 +40,7 @@ const SignupForm = (props) => {
   };
 
   return (
-    <main>
+    <main className='signMain'>
       <h1>Sign Up</h1>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
