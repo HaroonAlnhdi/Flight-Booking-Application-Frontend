@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+// import { useState } from "react";
+import { Navbar, Nav,  } from "react-bootstrap";
+import { Link,useParams } from "react-router-dom";
 import "./NavBar.css";
 import {
   AiOutlineHome,
@@ -11,6 +12,8 @@ import {
 } from "react-icons/ai";
 
 const MyNavbar = ({ user, handleSignout }) => {
+  const { userId } = useParams();
+
   return (
     <Navbar collapseOnSelect expand="lg" className=" bg-light bg-gradient">
       <Navbar.Brand as={Link} to="/">
@@ -30,7 +33,7 @@ const MyNavbar = ({ user, handleSignout }) => {
               <Nav.Link as={Link} to="#">
                 <AiOutlinePhone /> Contact
               </Nav.Link>
-              <Nav.Link as={Link} to="profile">
+              <Nav.Link as={Link} to={`profile/${user._id}`}>
                 <AiOutlineUser /> Profile
               </Nav.Link>
               <Nav.Link as={Link} to="" onClick={handleSignout}>

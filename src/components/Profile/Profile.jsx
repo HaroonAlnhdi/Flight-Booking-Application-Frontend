@@ -1,7 +1,9 @@
-const profile = () => {
+
+
+const profile = ({user}) => {
   return (
     <div>
-      <h1>Profile</h1>
+      <h1>{user._id}</h1>
     </div>
   );
 }

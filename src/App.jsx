@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import authService from "./services/authService";
 
 // Components
@@ -19,6 +20,7 @@ const App = () => {
     setUser(null);
   };
 
+
   return (
     <>
       <NavBar user={user} handleSignout={handleSignout} />
@@ -31,7 +33,7 @@ const App = () => {
         <Route path="/signup" element={<SignupForm setUser={setUser} />} />
         <Route path="/signin" element={<SigninForm setUser={setUser} />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:userId" element={<Profile  user={user} /> } />
       </Routes>
 
       <Footer />
