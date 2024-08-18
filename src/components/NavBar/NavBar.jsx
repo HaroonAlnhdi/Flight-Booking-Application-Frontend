@@ -30,7 +30,7 @@ const MyNavbar = ({ user, handleSignout }) => {
               <Nav.Link as={Link} to="#">
                 <AiOutlinePhone /> Contact
               </Nav.Link>
-              <Nav.Link as={Link} to="#">
+              <Nav.Link as={Link} to="profile">
                 <AiOutlineUser /> Profile
               </Nav.Link>
               <Nav.Link as={Link} to="" onClick={handleSignout}>
