@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import authService from "./services/authService";
@@ -12,6 +12,7 @@ import SigninForm from "./components/SigninForm/SigninForm";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Profile from "./components/Profile/Profile";
 import Footer from "./components/Footer/Footer";
+import userService from "./services/userServicr";
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
 
@@ -19,7 +20,6 @@ const App = () => {
     authService.signout();
     setUser(null);
   };
-
 
   return (
     <>
@@ -33,7 +33,7 @@ const App = () => {
         <Route path="/signup" element={<SignupForm setUser={setUser} />} />
         <Route path="/signin" element={<SigninForm setUser={setUser} />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/profile/:userId" element={<Profile  user={user} /> } />
+        <Route path="/profile/:userId" element={<Profile />} />
       </Routes>
 
       <Footer />
