@@ -11,7 +11,6 @@
     width: 50%;
     height: 100%;
 
-background-color: red;
 }
 
 .rightSide{
@@ -24,7 +23,11 @@ background-color: red;
     /* background-color: #f5f5f5; */
 }
 
-
+.rightSide h1{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
 .SignupFormContainer{
     background: rgba(255, 255, 255, 0.7);
     padding: 2rem;
