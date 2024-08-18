@@ -21,6 +21,7 @@ const App = () => {
     setUser(null);
   };
 
+
   return (
     <>
       <NavBar user={user} handleSignout={handleSignout} />
@@ -33,7 +34,10 @@ const App = () => {
         <Route path="/signup" element={<SignupForm setUser={setUser} />} />
         <Route path="/signin" element={<SigninForm setUser={setUser} />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/profile/:userId" element={<Profile />} />
+        <Route
+          path="/profile/:userId"
+          element={<Profile setUser={setUser} />}
+        />
       </Routes>
 
       <Footer />
