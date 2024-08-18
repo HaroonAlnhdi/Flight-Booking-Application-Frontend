@@ -46,8 +46,8 @@ const SigninForm = (props) => {
       </div>
       
       <div className="formContainer">
-        <h1>Weclcome to Fligh Booking</h1>
-        <p>{message}</p>
+        <h1>Weclcome to Flight Booking</h1>
+        <p className="message">{message}</p>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="username">Username:</label>

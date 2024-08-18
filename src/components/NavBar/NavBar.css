@@ -1,7 +1,8 @@
 .logo {
 
-    width: 30vw;
-    height: 17vh;
+    transform: rotateY(45deg);
+    height: 45px;
+    width: 16vw;
 
 }
 
