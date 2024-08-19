@@ -35,6 +35,7 @@ const ContactUS = () => {
   return (
     <>
       <form className="CantactUs">
+        <h1>Contact Us</h1>
         <label htmlFor="email"> Email :</label>
         <input type="text" name="email" id="email" value={userData.email} />
         <label htmlFor="Descreption">Descreption :</label>
