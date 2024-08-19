@@ -1,0 +1,76 @@
+.ProfileSection{
+    width: 100%;
+   height:  80vh;
+
+   display: flex;
+}
+
+.ProfileContainer{
+background-color: red;
+    width: 50%;
+    height: 100%;
+}
+
+.ProfileFormContainer{
+    gap: 4px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #6366F1;
+    width: 90%;
+
+}
+
+.ProfileFormContainer input{
+    width: 90%;
+    padding: 0.5rem;
+    /* margin: 0.5rem 0; */
+    border-radius: 5px;
+    border: 1px solid #6366F1;
+
+}
+.ProfileFormRow{
+    display: flex;
+    align-items: center;
+}
+
+.ProfileFormGroup{
+    width: 100%;
+}
+
+.profilebtn{
+
+   
+}
+.profilebtn.deltBtn button{
+    background: #f54747
+}
+
+.profilebtn.deltBtn button:hover{
+    background: #f03030;
+    opacity: 0.8;
+    border: #f03030;
+}
+.profilebtn button{
+    background-color: #6366F1;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+
+.ProfileFormContainer h1{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #6366F1;
+}
+
+input#email{
+    width: 100%;
+}

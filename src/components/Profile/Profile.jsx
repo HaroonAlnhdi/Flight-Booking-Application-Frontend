@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import userService from "../../services/userServicr";
 import { useNavigate } from "react-router-dom";
+import "./Profile.css";
+
 const profile = (props) => {
   const navigate = useNavigate();
   const { userId } = useParams();
@@ -84,52 +86,84 @@ const profile = (props) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleEdit}>
-        <label htmlFor="username">User name</label>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          value={formData.username}
-          onChange={handleChange}
-        />
-        <label htmlFor="first_name">First name</label>
-        <input
-          type="text"
-          name="first_name"
-          id="first_name"
-          value={formData.first_name}
-          onChange={handleChange}
-        />
-        <label htmlFor="last_name">Last name</label>
-        <input
-          type="text"
-          name="last_name"
-          id="last_name"
-          value={formData.last_name}
-          onChange={handleChange}
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <label htmlFor="phone_number">Phone Number</label>
-        <input
-          type="text"
-          name="phone_number"
-          id="phone_number"
-          value={formData.phone_number}
-          onChange={handleChange}
-        />
-        <button type="submit">Edit</button>
-      </form>
-      <button onClick={() => handleRemove(userId)}>Delete</button>
-    </div>
+    
+    <section className="ProfileSection">
+      <div className="ProfileContainer"></div>
+
+      <div className="ProfileFormContainer">
+        <h1>Edit Profile</h1>
+        <form onSubmit={handleEdit}>
+          <div className="ProfileFormRow">
+            <div className="ProfileFormColumn">
+              <label htmlFor="username">User name</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                value={formData.username}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="ProfileFormColumn">
+              <label htmlFor="first_name">First name</label>
+              <input
+                type="text"
+                name="first_name"
+                id="first_name"
+                value={formData.first_name}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="ProfileFormRow">
+
+
+            <div className="ProfileFormColumn">
+              <label htmlFor="last_name">Last name</label>
+              <input
+                type="text"
+                name="last_name"
+                id="last_name"
+                value={formData.last_name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="ProfileFormColumn">
+              <label htmlFor="email">Email</label>
+              <input
+                type="text"
+                name="email"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
+
+          <div className="ProfileFormRow">
+            <div className="ProfileFormColumn">
+              <label htmlFor="phone_number">Phone Number</label>
+              <input
+                type="text"
+                name="phone_number"
+                id="phone_number"
+                value={formData.phone_number}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
+          
+          <div className="profilebtn">
+            <button type="submit">Edit</button>
+          </div>
+        </form>
+        <div className="profilebtn deltBtn">
+          <button onClick={() => handleRemove(userId)}>Delete the Account</button>
+        </div>
+      </div>
+    </section>
   );
 };
 
