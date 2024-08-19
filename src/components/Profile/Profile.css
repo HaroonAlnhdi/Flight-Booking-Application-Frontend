@@ -36,10 +36,12 @@
     width: 100%;
 }
 
-
+.profilebtn.deltBtn{
+    margin: -55px;
+}
 .profilebtn.deltBtn button{
     background: #f54747;
-    margin-bottom: 40px;
+    margin: 0;
 }
 
 .profilebtn.deltBtn button:hover{
@@ -119,13 +121,14 @@ input#email{
     .ProfileContainer{
         margin-left: 55px;
     }
-    
+
     .ProfileSection{
         flex-direction: column;
         height: 100%;
     }
     .ProfileFormContainer{
         width: 100%;
+        height: 80vh;
     }
     .cardPic{
         width: 100%;
@@ -156,6 +159,7 @@ input#email{
 
     .ProfileFormContainer{
         width: 100%;
+        height: 80vh;
     }
     .cardPic{
         width: 100%;
