@@ -3,9 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import authService from "./services/authService";
 
-// Components
 import NavBar from "./components/NavBar/NavBar";
-import Landing from "./components/Landing/Landing";
 import Dashboard from "./components/Dashboard/Dashboard";
 import SignupForm from "./components/SignupForm/SignupForm";
 import SigninForm from "./components/SigninForm/SigninForm";
@@ -16,11 +14,13 @@ import userService from "./services/userServicr";
 import ContactUS from "./components/ContactUS/ContactUs";
 import tripServices from "./services/tripServices";
 import Booking from "./components/BookingPage/Booking";
+import ticketsServices from "./services/ticketsServices";
+
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
   const [tripData, setTripData] = useState([]);
   const [selectedTrip, setselectedTrip] = useState([]);
-
+  const [ticketsData, setticketsData] = useState([]);
   useEffect(() => {
     const fetchtripData = async () => {
       const trips = await tripServices.index();
@@ -29,6 +29,18 @@ const App = () => {
 
     fetchtripData();
   }, []);
+
+  useEffect(() => {
+    const fetchTicketsData = async (from, to) => {
+      const tickets = await ticketsServices.index(from, to);
+      setticketsData(tickets);
+    };
+
+    if (selectedTrip.length) {
+      const [{ from, to }] = selectedTrip;
+      fetchTicketsData(from, to);
+    }
+  }, [selectedTrip]);
 
   const handleSignout = () => {
     authService.signout();
@@ -44,7 +56,15 @@ const App = () => {
               path="/contactUS/:userId"
               element={<ContactUS user={user} />}
             />
-            <Route path="/Booking" element={<Booking />} />
+            <Route
+              path="/Booking"
+              element={
+                <Booking
+                  selectedTrip={selectedTrip}
+                  ticketsData={ticketsData}
+                />
+              }
+            />
             <Route
               path="/"
               element={
