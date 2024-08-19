@@ -15,6 +15,7 @@ import Footer from "./components/Footer/Footer";
 import userService from "./services/userServicr";
 import ContactUS from "./components/ContactUS/ContactUs";
 import tripServices from "./services/tripServices";
+import Booking from "./components/BookingPage/Booking";
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
   const [tripData, setTripData] = useState([]);
@@ -40,6 +41,11 @@ const App = () => {
         {user ? (
           <>
             <Route
+              path="/contactUS/:userId"
+              element={<ContactUS user={user} />}
+            />
+            <Route path="/Booking" element={<Booking />} />
+            <Route
               path="/"
               element={
                 <Dashboard
@@ -48,14 +54,22 @@ const App = () => {
                 />
               }
             />
-            <Route
-              path="/contactUS/:userId"
-              element={<ContactUS user={user} />}
-            />
           </>
         ) : (
-          <Route path="/" element={<Landing />} />
+          <>
+            <Route
+              path="/"
+              element={
+                <Dashboard
+                  tripData={tripData}
+                  setselectedTrip={setselectedTrip}
+                />
+              }
+            />
+            <Route path="/Booking" element={<Booking />} />
+          </>
         )}
+
         <Route path="/signup" element={<SignupForm setUser={setUser} />} />
         <Route path="/signin" element={<SigninForm setUser={setUser} />} />
         <Route path="/aboutus" element={<AboutUs />} />
