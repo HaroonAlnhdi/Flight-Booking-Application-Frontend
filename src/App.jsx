@@ -18,6 +18,7 @@ import tripServices from "./services/tripServices";
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
   const [tripData, setTripData] = useState([]);
+  const [selectedTrip, setselectedTrip] = useState([]);
 
   useEffect(() => {
     const fetchtripData = async () => {
@@ -38,7 +39,15 @@ const App = () => {
       <Routes>
         {user ? (
           <>
-            <Route path="/" element={<Dashboard tripData={tripData} />} />
+            <Route
+              path="/"
+              element={
+                <Dashboard
+                  tripData={tripData}
+                  setselectedTrip={setselectedTrip}
+                />
+              }
+            />
             <Route
               path="/contactUS/:userId"
               element={<ContactUS user={user} />}
