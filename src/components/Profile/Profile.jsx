@@ -88,7 +88,18 @@ const profile = (props) => {
   return (
     
     <section className="ProfileSection">
-      <div className="ProfileContainer"></div>
+      <div className="ProfileContainer">
+        <div className="cardPic">
+         <img src="https://i.pinimg.com/564x/17/df/a9/17dfa916f8e4ca133dbbf0b4fbf76c3c.jpg" alt="profile icons" />
+        </div>
+
+        <div className="profileDitals">
+          <h1>Welcome  <span>{userData.first_name} {userData.last_name}</span></h1>
+          <p>{userData.email}</p>
+
+        </div>
+
+      </div>
 
       <div className="ProfileFormContainer">
         <h1>Edit Profile</h1>
