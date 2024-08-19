@@ -23,31 +23,55 @@
     margin-bottom: 2rem;
 }
 
+/* form section */
+.flight-booking-form-conta{
+    
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+}
 .flight-booking-form{
 
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 2rem;
+    /* flex-direction: column; */
+    padding: 20px;
+    margin-top: 1rem;
     margin-bottom: 2rem;
+    border: #6366F1 2px solid;
+    border-radius: 25px  25px  30px 50px;
 }
 
-.flight-booking-form input{
+.flight-booking-form select{
 
-    width: 90%;
-    padding: 1rem;
-    margin: 1rem;
+
+    padding: 0.7rem;
+    margin: 0.1rem;
     border: 1px solid #6366f1;
     border-radius: 5px;
-    outline: none;
+    outline: none ;
 }
 
 
 
+.flight-booking-form button{
+        text-align: center;
+        width: 30%;
+        padding: 0.5rem;
+        margin: 1rem;
+        outline: none;
+        cursor: pointer;
 
-/* second section */
+}
+
+
+/* explore section */
 .explor-sec h2{
     color: #6366f1;
     font-weight: 600;
@@ -57,7 +81,9 @@
 .places {
     position: relative;
     display: block;
-    overflow: hidden
+    overflow: hidden;
+    border-radius: 35px;
+    
 }
 
 .places .places-info {
@@ -70,7 +96,8 @@
     padding: 25px 30px;
     box-shadow: 0px 5px 24.25px 0.75px rgba(0,0,0,0.1);
     background: #ffffff;
-    position: absolute
+    position: absolute;
+    border-radius: 25px;
 }
 
 .places .places-overlay {
@@ -104,7 +131,8 @@
     position: absolute;
     top: -40px;
     right: -40px;
-    z-index: 0
+    z-index: 0;
+    
 }
 
 .fixed-size-img {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone,FaSearch } from "react-icons/fa";
 const Dashboard = ({ tripData, setselectedTrip }) => {
   const navigate = useNavigate();
   const [fromInput, setFromInput] = useState("");
@@ -37,10 +37,12 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
           <h1>A Great Experience</h1>
           <img src="/pic/home.jpg" alt="flightHeader " />
         </div>
-
+        <div className="flight-booking-form-conta"> 
+        <h2>Booking a flight</h2>
         <div className="flight-booking-form">
+
           <form onSubmit={handleSubmit}>
-            <label htmlFor="From">From:</label>
+            <label htmlFor="From">From</label>
             <select name="From" id="From" onChange={handelChange}>
               <option value="">Select Departure</option>
               {tripData.map((trip, index) => (
@@ -51,7 +53,7 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
               ))}
             </select>
 
-            <label htmlFor="To">To:</label>
+            <label htmlFor="To">To</label>
             <select name="To" id="To" onChange={handleChangeTo}>
               <option value="">Select Arrival</option>
               {filteredToOptions.map((trip, index) => (
@@ -62,8 +64,9 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
               ))}
             </select>
 
-            {isFormValid ? <button type="submit">Submit</button> : ""}
+            {isFormValid ? <button type="submit">Search <FaSearch /></button> : ""}
           </form>
+        </div>
         </div>
       </section>
 
@@ -71,6 +74,8 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
         <div className="container">
           <div className="section-heading mb-4">
             <h2 className="h1 mb-0">Explore Nature</h2>
+            <p> </p>
+            <p>Explore the breathtaking beauty of nature in Bahrain and the Kingdom of Saudi Arabia. From stunning landscapes to rich cultural heritage, these destinations offer a unique experience for nature lovers and adventure enthusiasts. Discover the architectural wonders of Bahrain and immerse yourself in its vibrant culture. In the Kingdom of Saudi Arabia, explore the coastal city of Jeddah and its fascinating history, or visit the picturesque city of Abha surrounded by majestic mountains. Whether it's exploring beautiful beaches, enjoying pleasant climates, or taking in breathtaking views, these destinations have something for everyone.</p>
           </div>
           <div className="row position-relative mt-n1-9">
             <div className="col-md-6 col-lg-4 mt-1-9">
