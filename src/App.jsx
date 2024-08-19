@@ -14,21 +14,31 @@ import Profile from "./components/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import userService from "./services/userServicr";
 import ContactUS from "./components/ContactUS/ContactUs";
+import tripServices from "./services/tripServices";
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
+  const [tripData, setTripData] = useState([]);
+
+  useEffect(() => {
+    const fetchtripData = async () => {
+      const trips = await tripServices.index();
+      setTripData(trips);
+    };
+
+    fetchtripData();
+  }, []);
 
   const handleSignout = () => {
     authService.signout();
     setUser(null);
   };
-
   return (
     <>
       <NavBar user={user} handleSignout={handleSignout} />
       <Routes>
         {user ? (
           <>
-            <Route path="/" element={<Dashboard user={user} />} />
+            <Route path="/" element={<Dashboard tripData={tripData} />} />
             <Route
               path="/contactUS/:userId"
               element={<ContactUS user={user} />}
