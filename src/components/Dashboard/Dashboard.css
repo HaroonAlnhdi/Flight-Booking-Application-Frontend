@@ -44,24 +44,81 @@
     outline: none;
 }
 
-.recommendation-container{
 
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+
+
+/* second section */
+.explor-sec h2{
+    color: #6366f1;
 }
 
-.recommendation-card{
-
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+.places {
+    position: relative;
+    display: block;
+    overflow: hidden
 }
+
+.places .places-info {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    border-radius: 5px;
+    transform: translate3d(0px, 0%, 0px);
+    transition: all 800ms ease 0.35s;
+    padding: 25px 30px;
+    box-shadow: 0px 5px 24.25px 0.75px rgba(0,0,0,0.1);
+    background: #ffffff;
+    position: absolute
+}
+
+.places .places-overlay {
+    left: 15px;
+    right: 15px;
+    opacity: 1;
+    padding: 0 20px;
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    transform: translate3d(0px, -110%, 0px);
+    transition: all 700ms ease 0.35s;
+    box-shadow: 0px 5px 24.25px 0.75px rgba(0,0,0,0.1)
+}
+
+.places:hover .places-overlay {
+    transform: translate3d(0px, 0, 0px);
+    transition-delay: 0.1s;
+    background: #6366F1;
+    border-radius: 5px
+}
+
+.places:hover .places-info {
+    transform: translate3d(0px, 130px, 0px);
+    transition-delay: 0.2s
+}
+
+
+
+.places-bg-shape img {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    z-index: 0
+}
+
+.fixed-size-img {
+    width: 30vw; 
+    height: 70vh;
+    object-fit: cover;
+
+  }
+
+@media screen and (max-width: 991px) {
+    .places .places-info {
+        padding:20px
+    }
+}
+
+
+
+
+
