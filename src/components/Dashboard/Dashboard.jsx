@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
-import { FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope,FaPhone } from "react-icons/fa";
 const Dashboard = ({ tripData, setselectedTrip }) => {
   const [fromInput, setFromInput] = useState("");
   const [toInput, setToInput] = useState("");
@@ -166,12 +166,15 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
         <h1>Contact</h1>
         <div className="contact-container">
           <div className="contact-info">
+            <p>Let us book your next trip!</p>
             <div className="info">
-              <FaMapMarkerAlt />
-              <p>123 Street, New York, USA</p>
+            <p> <FaMapMarkerAlt />123 Street, Manama, BHA</p>
             </div>
             <div className="info">
-              <FaEnvelope />
+              <p> <FaPhone />Phone: +973 33440454</p>
+            </div>
+            <div className="info">
+              <p><FaEnvelope />Email:FlightHaro24@gmail.com</p>
             </div>
           </div>
         </div>

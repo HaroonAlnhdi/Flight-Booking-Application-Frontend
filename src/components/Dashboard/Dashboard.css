@@ -50,6 +50,8 @@
 /* second section */
 .explor-sec h2{
     color: #6366f1;
+    font-weight: 600;
+
 }
 
 .places {
@@ -110,6 +112,22 @@
     height: 70vh;
     object-fit: cover;
 
+  }
+
+  .contactSec{
+    margin-left: 100px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+  }
+
+    .contactSec h1{
+        color: #6366f1;
+        font-weight: 600;
+    }
+  .contact-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
 @media screen and (max-width: 991px) {
