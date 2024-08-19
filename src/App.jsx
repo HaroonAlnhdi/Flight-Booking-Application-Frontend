@@ -13,6 +13,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Profile from "./components/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import userService from "./services/userServicr";
+import ContactUS from "./components/ContactUS/ContactUs";
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
 
@@ -21,13 +22,18 @@ const App = () => {
     setUser(null);
   };
 
-
   return (
     <>
       <NavBar user={user} handleSignout={handleSignout} />
       <Routes>
         {user ? (
-          <Route path="/" element={<Dashboard user={user} />} />
+          <>
+            <Route path="/" element={<Dashboard user={user} />} />
+            <Route
+              path="/contactUS/:userId"
+              element={<ContactUS user={user} />}
+            />
+          </>
         ) : (
           <Route path="/" element={<Landing />} />
         )}
