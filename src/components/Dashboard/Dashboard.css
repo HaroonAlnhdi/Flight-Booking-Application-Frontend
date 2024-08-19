@@ -1,0 +1,25 @@
+
+
+.flight-booking-header{
+
+
+    width: 100%;
+    text-align: center ;
+}
+
+.flight-booking-header h1{
+
+   color: #6366f1;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.flight-booking-header img {
+
+    width: 90vw;
+    height: 60vh;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+

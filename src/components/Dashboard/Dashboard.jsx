@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./Dashboard.css";
+
 const Dashboard = ({ tripData, setselectedTrip }) => {
   const [fromInput, setFromInput] = useState("");
   const [toInput, setToInput] = useState("");
@@ -26,6 +28,18 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
 
   return (
     <main>
+       <section className="flight-booking-container">
+        <div className="flight-booking-header">
+          <h1>Find And Book</h1>
+          <h1>A Great Experience</h1>
+          <img src="/pic/home.jpg" alt="flightHeader " />
+        </div>
+       <div className="flight-booking-form">
+
+
+       </div>
+
+        <div className="flight-booking-form">
       <form onSubmit={handleSubmit}>
         <label htmlFor="From">From:</label>
         <select name="From" id="From" onChange={handelChange}>
@@ -51,8 +65,13 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
 
         <button type="submit">Submit</button>
       </form>
+            </div>
+      </section>
     </main>
   );
 };
 
 export default Dashboard;
+
+
+
