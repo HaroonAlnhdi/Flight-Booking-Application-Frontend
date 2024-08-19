@@ -2,6 +2,7 @@ import React from "react";
 // import { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
+import { MdAirplaneTicket } from "react-icons/md";
 import "./NavBar.css";
 import {
   AiOutlineHome,
@@ -33,6 +34,9 @@ const MyNavbar = ({ user, handleSignout }) => {
               <Nav.Link as={Link} to={`contactUs/${user._id}`}>
                 <AiOutlinePhone /> Contact
               </Nav.Link>
+              <Nav.Link as={Link} to="#">
+              <MdAirplaneTicket />Ticket
+              </Nav.Link>
               <Nav.Link as={Link} to={`profile/${user._id}`}>
                 <AiOutlineUser /> Profile
               </Nav.Link>
@@ -48,9 +52,9 @@ const MyNavbar = ({ user, handleSignout }) => {
               <Nav.Link as={Link} to="aboutus">
                 <AiOutlineInfoCircle /> About
               </Nav.Link>
-              <Nav.Link as={Link} to="#">
+              {/* <Nav.Link as={Link} to="#">
                 <AiOutlinePhone /> Contact
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link as={Link} to="/signin">
                 <AiOutlineUser /> Sign In
               </Nav.Link>
