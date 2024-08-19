@@ -90,7 +90,7 @@ const profile = (props) => {
     <section className="ProfileSection">
       <div className="ProfileContainer">
         <div className="cardPic">
-         <img src="https://i.pinimg.com/564x/17/df/a9/17dfa916f8e4ca133dbbf0b4fbf76c3c.jpg" alt="profile icons" />
+         <img src="https://i.pinimg.com/564x/6f/a5/47/6fa547241d136e41e1ee347a4ef6026d.jpg" alt="profile icons" />
         </div>
 
         <div className="profileDitals">
