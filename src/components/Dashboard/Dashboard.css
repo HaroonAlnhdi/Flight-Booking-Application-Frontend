@@ -66,6 +66,7 @@
     border: 1px solid #6366f1;
     border-radius: 5px;
     outline: none ;
+    width: 100%;
 }
 
 
@@ -93,7 +94,7 @@
     display: block;
     overflow: hidden;
     border-radius: 35px;
-    
+    gap: 10px;
 }
 
 .places .places-info {
@@ -168,13 +169,43 @@
     margin-bottom: 1rem;
   }
 
-@media screen and (max-width: 991px) {
-    .places .places-info {
-        padding:20px
+
+@media screen and (max-width: 768px) {
+    .flight-booking-form {
+        width: 80%;
+    }
+
+    .fixed-size-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contactSec {
+        margin-left: 0;
     }
 }
 
+@media screen and (max-width: 480px) {
 
+    
+  .row.positio-relative.mt-n1-9{
+    gap:10px;
+  }
+
+    .flight-booking-form {
+        width: 90%;
+    }
+
+    .fixed-size-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contactSec {
+        margin-left: 1px;
+    }
+
+}
 
 
 
