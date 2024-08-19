@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-import { FaMapMarkerAlt, FaEnvelope,FaPhone } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 const Dashboard = ({ tripData, setselectedTrip }) => {
+  const navigate = useNavigate();
   const [fromInput, setFromInput] = useState("");
   const [toInput, setToInput] = useState("");
 
@@ -23,10 +24,10 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setselectedTrip([{ from: fromInput, to: toInput }]);
+    navigate("/Booking");
   };
 
   const isFormValid = fromInput !== "" && toInput !== "";
-  
 
   return (
     <main>
@@ -61,13 +62,7 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
               ))}
             </select>
 
-            {isFormValid ? (
-              <Link to={`Booking`}>
-                <button type="submit">Submit</button>
-              </Link>
-            ) : (
-              ""
-            )}
+            {isFormValid ? <button type="submit">Submit</button> : ""}
           </form>
         </div>
       </section>
@@ -98,7 +93,11 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
                         </a>
                       </h3>
                       <p className="text-white mb-0">
-                        Bahrain is a country located in the Middle East, known for its rich history and vibrant culture. It is an archipelago consisting of several islands in the Arabian Gulf. Bahrain is famous for its stunning architecture, beautiful beaches, and warm hospitality.
+                        Bahrain is a country located in the Middle East, known
+                        for its rich history and vibrant culture. It is an
+                        archipelago consisting of several islands in the Arabian
+                        Gulf. Bahrain is famous for its stunning architecture,
+                        beautiful beaches, and warm hospitality.
                       </p>
                     </div>
                   </div>
@@ -113,7 +112,9 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
                   alt="jeddah"
                 />
                 <div className="places-info">
-                  <h3 className="text-primary mb-1 h4">Kingdom of Saudi Arabia</h3>
+                  <h3 className="text-primary mb-1 h4">
+                    Kingdom of Saudi Arabia
+                  </h3>
                   <span className="font-weight-600 text-secondary">Jeddah</span>
                 </div>
                 <div className="places-overlay">
@@ -125,7 +126,11 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
                         </a>
                       </h3>
                       <p className="text-white mb-0">
-                        Jeddah is a city located in the Kingdom of Saudi Arabia. It is known for its rich history, vibrant culture, and stunning architecture. Jeddah is situated on the coast of the Red Sea and serves as a major commercial hub in the region.
+                        Jeddah is a city located in the Kingdom of Saudi Arabia.
+                        It is known for its rich history, vibrant culture, and
+                        stunning architecture. Jeddah is situated on the coast
+                        of the Red Sea and serves as a major commercial hub in
+                        the region.
                       </p>
                     </div>
                   </div>
@@ -140,7 +145,9 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
                   alt="abha"
                 />
                 <div className="places-info">
-                  <h3 className="text-primary mb-1 h4">Kingdom of Saudi Arabia</h3>
+                  <h3 className="text-primary mb-1 h4">
+                    Kingdom of Saudi Arabia
+                  </h3>
                   <span className="font-weight-600 text-secondary">Abha</span>
                 </div>
                 <div className="places-overlay">
@@ -152,7 +159,12 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
                         </a>
                       </h3>
                       <p className="text-white mb-0">
-                        Abha is a city located in the Kingdom of Saudi Arabia. It is known for its beautiful landscapes, pleasant climate, and rich cultural heritage. Abha is surrounded by mountains and offers breathtaking views, making it a popular destination for nature lovers and adventure enthusiasts.
+                        Abha is a city located in the Kingdom of Saudi Arabia.
+                        It is known for its beautiful landscapes, pleasant
+                        climate, and rich cultural heritage. Abha is surrounded
+                        by mountains and offers breathtaking views, making it a
+                        popular destination for nature lovers and adventure
+                        enthusiasts.
                       </p>
                     </div>
                   </div>
@@ -168,13 +180,24 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
           <div className="contact-info">
             <p>Let us book your next trip!</p>
             <div className="info">
-            <p> <FaMapMarkerAlt />123 Street, Manama, BHA</p>
+              <p>
+                {" "}
+                <FaMapMarkerAlt />
+                123 Street, Manama, BHA
+              </p>
             </div>
             <div className="info">
-              <p> <FaPhone />Phone: +973 33440454</p>
+              <p>
+                {" "}
+                <FaPhone />
+                Phone: +973 33440454
+              </p>
             </div>
             <div className="info">
-              <p><FaEnvelope />Email:FlightHaro24@gmail.com</p>
+              <p>
+                <FaEnvelope />
+                Email:FlightHaro24@gmail.com
+              </p>
             </div>
           </div>
         </div>
