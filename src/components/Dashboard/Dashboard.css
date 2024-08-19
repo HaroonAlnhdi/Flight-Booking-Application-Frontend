@@ -23,3 +23,45 @@
     margin-bottom: 2rem;
 }
 
+.flight-booking-form{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.flight-booking-form input{
+
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid #6366f1;
+    border-radius: 5px;
+    outline: none;
+}
+
+.recommendation-container{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.recommendation-card{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

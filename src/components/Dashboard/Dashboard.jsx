@@ -5,8 +5,8 @@ import "./Dashboard.css";
 const Dashboard = ({ tripData, setselectedTrip }) => {
   const [fromInput, setFromInput] = useState("");
   const [toInput, setToInput] = useState("");
-  console.log(fromInput);
-  console.log(toInput);
+  // console.log(fromInput);
+  // console.log(toInput);
   const handelChange = (event) => {
     event.preventDefault();
     setFromInput(event.target.value);
@@ -34,10 +34,7 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
           <h1>A Great Experience</h1>
           <img src="/pic/home.jpg" alt="flightHeader " />
         </div>
-       <div className="flight-booking-form">
-
-
-       </div>
+      
 
         <div className="flight-booking-form">
       <form onSubmit={handleSubmit}>
@@ -62,10 +59,33 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
             </option>
           ))}
         </select>
+          
+        <button type="submit">Search</button>
 
-        <button type="submit">Submit</button>
       </form>
             </div>
+      </section>
+
+      <section className="Recommendtion">
+        <h2>Recommendation</h2>
+        <div className="recommendation-container">
+          <div className="recommendation-card">
+            <img src="https://i.pinimg.com/564x/80/2b/b4/802bb410fe2c52b954551a1283b986d0.jpg" alt="recommendation" />
+            <h3>Bahrain</h3>
+            <p>From $200</p>
+          </div>
+          <div className="recommendation-card">
+            <img src="/pic/2.jpg" alt="recommendation" />
+            <h3>London</h3>
+            <p>From $250</p>
+          </div>
+          <div className="recommendation-card">
+            <img src="/pic/3.jpg" alt="recommendation" />
+            <h3>Barcelona</h3>
+            <p>From $300</p>
+          </div>
+        </div>
+
       </section>
     </main>
   );
