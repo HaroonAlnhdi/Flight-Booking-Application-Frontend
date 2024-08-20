@@ -3,21 +3,29 @@ import { Modal, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import userService from "../../services/userServicr";
 import "./ContactUs.css";
+import contectUsService from "../../services/contectUsService";
 
 const ContactUS = () => {
   const [show, setShow] = useState(false);
   const { userId } = useParams();
-  const [userData, setuserData] = useState(null);
-
+  const [userData, setUserData] = useState(null);
+  const [formData, setFormData] = useState({});
+  
+  
   useEffect(() => {
     const fetchUser = async () => {
-      const userData = await userService.show(userId);
-
-      setuserData(userData);
+      try {
+        const userData = await userService.show(userId);
+        setUserData(userData);
+        setFormData({ email: userData.email }); 
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
     };
 
     if (userId) fetchUser();
-  }, []);
+  }, [userId]);
+  
   if (!userData) {
     return <h1>Loading...</h1>;
   }
@@ -32,15 +40,30 @@ const ContactUS = () => {
     document.querySelector("#Descreption").value = "";
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log("hhhhhhhhhdd");
+      await contectUsService.content(formData,userId);
+    // setFormData(newConeantResponse.Body);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
   return (
     <>
-      <form className="CantactUs">
+      <form  onSubmit={handleSubmit}className="CantactUs">
         <h1>Contact Us</h1>
         <label htmlFor="email"> Email :</label>
-        <input type="text" name="email" id="email" value={userData.email} />
-        <label htmlFor="Descreption">Descreption :</label>
-        <textarea name="Descreption" id="Descreption"></textarea>
-        <button onClick={handleClick}>Submit</button>
+        <input type="text" name="email" id="email" value={userData.email} onChange={handleChange} />
+        <label htmlFor="message">Descreption :</label>
+        <textarea name="message" id="message" onChange={handleChange}></textarea>
+        <button type="submit" >Submit</button>
       </form>
 
       {/* Modal */}

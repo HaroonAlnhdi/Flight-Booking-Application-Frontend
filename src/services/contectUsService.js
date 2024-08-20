@@ -1,17 +1,19 @@
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+const BACKEND_URL = `${import.meta.env.VITE_BACKEND_URL}/contactUs`;
 
-const content = async (formData) => {
+const content = async (formData,userId) => {
     try {
-        const res = await fetch(`${BACKEND_URL}/contactUs/${userId}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
-        });
-        const json = await res.json();
-        if (json.err) {
-          throw new Error(json.err);
-        }
-        return json;
+        const res = await fetch(`${BACKEND_URL}/${userId}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+          });
+          
+          const json = await res.json();
+          if (json.error) {
+            throw new Error(json.error);
+          }
+          return json;
+          
     } catch (err) {
       console.log(err);
       throw err;
