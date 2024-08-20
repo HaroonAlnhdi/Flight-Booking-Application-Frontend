@@ -24,7 +24,7 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setselectedTrip([{ from: fromInput, to: toInput }]);
-    navigate("/Booking");
+    navigate("/booking");
   };
 
   const isFormValid = fromInput !== "" && toInput !== "";

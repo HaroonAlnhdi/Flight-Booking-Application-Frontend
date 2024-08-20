@@ -1,20 +1,20 @@
-import authService from '../../services/authService'
+import authService from "../../services/authService";
 
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './SignupForm.css';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./SignupForm.css";
 
 const SignupForm = (props) => {
   const navigate = useNavigate();
-  const [message, setMessage] = useState(['']);
+  const [message, setMessage] = useState([""]);
   const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-    passwordConf: '',
-    first_name: '',
-    last_name: '',
-    email: '',
-    phone_number: '',
+    username: "",
+    password: "",
+    passwordConf: "",
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
   });
 
   const updateMessage = (msg) => {
@@ -28,33 +28,42 @@ const SignupForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      updateMessage('');
-      console.log(authService)
-      const newUserResponse = await authService.signup(formData)
-      props.setUser(newUserResponse.user)
-      navigate('/');
+      updateMessage("");
+      console.log(authService);
+      const newUserResponse = await authService.signup(formData);
+      props.setUser(newUserResponse.user);
+      navigate("/signin");
     } catch (err) {
       updateMessage(err.message);
     }
   };
 
-  const { username, password, passwordConf,first_name,last_name,email,phone_number } = formData;
+  const {
+    username,
+    password,
+    passwordConf,
+    first_name,
+    last_name,
+    email,
+    phone_number,
+  } = formData;
 
   const isFormInvalid = () => {
     return !(username && password && password === passwordConf);
   };
 
   return (
-    <main className='signupmain'>
-      <div className='leftSide'>
+    <main className="signupmain">
+      <div className="leftSide">
         <video autoPlay loop muted playsInline className="backVideo">
-          <source src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/online-ticket-booking-animation-download-in-lottie-json-gif-static-svg-file-formats--travel-flight-tourism-hotel-pack-holidays-animations-5105109.mp4" type="video/mp4" />
+          <source
+            src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/online-ticket-booking-animation-download-in-lottie-json-gif-static-svg-file-formats--travel-flight-tourism-hotel-pack-holidays-animations-5105109.mp4"
+            type="video/mp4"
+          />
         </video>
-
-
       </div>
-      <div className='rightSide'>
-        <div className="SignupFormContainer">  
+      <div className="rightSide">
+        <div className="SignupFormContainer">
           <h1>Sign Up</h1>
           <p>{message}</p>
           <form onSubmit={handleSubmit}>
@@ -137,10 +146,12 @@ const SignupForm = (props) => {
                 />
               </div>
             </div>
-            <div className='signupbtn'>
+            <div className="signupbtn">
               <button disabled={isFormInvalid()}>Sign Up</button>
             </div>
-            <p>You already have an account? <Link to="/signin">Login</Link></p>
+            <p>
+              You already have an account? <Link to="/signin">Login</Link>
+            </p>
           </form>
         </div>
       </div>

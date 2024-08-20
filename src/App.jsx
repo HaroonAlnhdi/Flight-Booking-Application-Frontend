@@ -15,6 +15,7 @@ import ContactUS from "./components/ContactUS/ContactUs";
 import tripServices from "./services/tripServices";
 import Booking from "./components/BookingPage/Booking";
 import ticketsServices from "./services/ticketsServices";
+import Tickets from "./components/TicketsComponent/Tickets";
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
@@ -52,16 +53,18 @@ const App = () => {
       <Routes>
         {user ? (
           <>
+            <Route path="/tickets/:userId" element={<Tickets />} />
             <Route
               path="/contactUS/:userId"
               element={<ContactUS user={user} />}
             />
             <Route
-              path="/Booking"
+              path="/booking"
               element={
                 <Booking
                   selectedTrip={selectedTrip}
                   ticketsData={ticketsData}
+                  user={user}
                 />
               }
             />
@@ -86,7 +89,16 @@ const App = () => {
                 />
               }
             />
-            <Route path="/Booking" element={<Booking />} />
+            <Route
+              path="/booking"
+              element={
+                <Booking
+                  selectedTrip={selectedTrip}
+                  ticketsData={ticketsData}
+                  user={user}
+                />
+              }
+            />
           </>
         )}
 
