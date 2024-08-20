@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Booking = ({ selectedTrip, ticketsData, user }) => {
   const navigate = useNavigate();
 
-  const handleSubmit = async (event, tripId) => {
+  const handleSubmit = async (event, tripId, Qty) => {
     event.preventDefault();
 
     try {
@@ -15,7 +15,8 @@ const Booking = ({ selectedTrip, ticketsData, user }) => {
           return;
         }
       } else {
-        await bookingService.create(tripId, selectedTrip);
+        const tripData = { ...selectedTrip, Qty };
+        await bookingService.create(tripId, tripData);
         navigate(`/tickets/${user._id}`);
       }
     } catch (error) {
@@ -33,7 +34,11 @@ const Booking = ({ selectedTrip, ticketsData, user }) => {
       <ul>
         {ticketsData.map((trip, index) => (
           <li key={index}>
-            <form onSubmit={(e) => handleSubmit(e, trip._id)}>
+            <form
+              onSubmit={(e) => handleSubmit(e, trip._id, e.target.Qty.value)}
+            >
+              <label htmlFor="Qty"></label>
+              <input type="number" name="Qty" id="Qty" />
               <p>Departure Airport: {trip.dep_airport}</p>
               <p>Departure Airport IATA: {trip.dep_airport_IATA}</p>
               <p>Arrival Airport: {trip.arr_airport}</p>

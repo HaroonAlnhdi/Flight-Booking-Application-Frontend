@@ -26,6 +26,9 @@ const Tickets = () => {
         <div key={booking._id}>
           <h2>Booking ID: {booking._id}</h2>
           <p>
+            <strong>Qty:</strong> {booking.Qty}
+          </p>
+          <p>
             <strong>Departure Airport:</strong> {booking.dep_airport}
           </p>
           <p>
