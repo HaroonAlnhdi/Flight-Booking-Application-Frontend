@@ -22,7 +22,7 @@ const profile = (props) => {
   useEffect(() => {
     const fetchUser = async () => {
       const userData = await userService.show(userId);
-
+      
       setuserData(userData);
     };
 
