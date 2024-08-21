@@ -9,14 +9,13 @@
 
 
 
-.nav-link:nth-last-child(-n + 2){
+.ms-auto a.nav-link{
     margin-right: -500px !important;
     background-color: #6366F1 !important; 
     color: #FFFFFF !important; 
     padding: 0.5rem 1.5rem !important;
     border-radius: 0.25rem !important; 
     margin: 5px !important;
-    /* font-size: 1rem !important;  */
     font-weight: 500 !important; 
 }
 
@@ -40,4 +39,11 @@
     /* font-size: 1rem !important;  */
     font-weight: 500 !important; 
 
+}
+
+
+@media (min-width: 995px) and ( max-width: 1200px) {
+    .ms-auto a.nav-link{
+        font-size: 11px;
+    }
 }
