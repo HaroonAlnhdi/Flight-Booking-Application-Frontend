@@ -15,7 +15,7 @@ const content = async (formData,userId) => {
           return json;
           
     } catch (err) {
-      console.log(err);
+      console.error(err);
       throw err;
     }
   };

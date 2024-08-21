@@ -14,7 +14,7 @@ const create = async (tripId, tripData) => {
     const res = await fetch(`${BASE_URL}/${tripId}`, options);
     return res.json();
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
 };
 

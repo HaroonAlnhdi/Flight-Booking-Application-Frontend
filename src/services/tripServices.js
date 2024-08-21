@@ -5,7 +5,7 @@ const index = async () => {
     const res = await fetch(BASE_URL);
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 

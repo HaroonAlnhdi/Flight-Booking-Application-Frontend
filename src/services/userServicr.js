@@ -7,7 +7,7 @@ const index = async () => {
     });
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -20,7 +20,7 @@ const show = async (userId) => {
     
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -35,7 +35,7 @@ const update = async (formData, userId) => {
     });
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -47,7 +47,7 @@ const deleteUser = async (userId) => {
     console.log("service: ", res);
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -60,7 +60,7 @@ const deleteTicket = async (bookingId, userId) => {
     });
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
