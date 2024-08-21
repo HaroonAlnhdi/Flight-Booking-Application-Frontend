@@ -1,4 +1,5 @@
 import  './Footer.css';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 const Footer = () => {
     return (
@@ -19,7 +20,7 @@ const Footer = () => {
                 <div className="footer-col">
                     <h4>get help</h4>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
+                        <li><Link to='/FAQ'>FAQ</Link></li>
                         <li><a href="#">payment options</a></li>
                     </ul>
                 </div>

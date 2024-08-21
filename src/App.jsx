@@ -16,6 +16,7 @@ import tripServices from "./services/tripServices";
 import Booking from "./components/BookingPage/Booking";
 import ticketsServices from "./services/ticketsServices";
 import Tickets from "./components/TicketsComponent/Tickets";
+import FAQ from "./components/FAQ/FAQ";
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser());
@@ -109,6 +110,7 @@ const App = () => {
           path="/profile/:userId"
           element={<Profile setUser={setUser} />}
         />
+        < Route path="/FAQ" element={< FAQ />} />
       </Routes>
 
       <Footer />
