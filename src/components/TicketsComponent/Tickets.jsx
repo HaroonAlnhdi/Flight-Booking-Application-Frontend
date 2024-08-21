@@ -29,10 +29,10 @@ const Tickets = () => {
             <strong>Qty:</strong> {booking.Qty}
           </p>
           <p>
-            <strong>Departure Airport:</strong> {booking.dep_airport}
+            <strong>Departure Airport:</strong> {booking.trip.dep_airport} ( {booking.trip.dep_airport_IATA} )
           </p>
           <p>
-            <strong>Arrival Airport:</strong> {booking.arr_airport}
+            <strong>Arrival Airport:</strong> {booking.trip.arr_airport} ( {booking.trip.arr_airport_IATA} )
           </p>
           <p>
             <strong>Departure Date:</strong>{" "}
@@ -43,13 +43,10 @@ const Tickets = () => {
             {new Date(booking.arrTripDate).toLocaleDateString()}
           </p>
           <p>
-            <strong>Duration:</strong> {booking.duration} minutes
+            <strong>Duration:</strong> {booking.trip.duration} minutes
           </p>
           <p>
             <strong>Price:</strong> ${booking.price}
-          </p>
-          <p>
-            <strong>ID:</strong> ${booking.trip}
           </p>
         </div>
       ))}

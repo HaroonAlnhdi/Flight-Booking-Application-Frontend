@@ -1,5 +1,5 @@
 import Accordion from 'react-bootstrap/Accordion';
-import 'FAQ.css'
+import './FAQ.css'
 const FAQ = () => {
     return (
         <>
