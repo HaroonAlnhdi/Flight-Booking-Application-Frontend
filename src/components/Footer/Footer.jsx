@@ -13,7 +13,7 @@ const Footer = () => {
                 <div className="footer-col">
                     <h4> Flight Booking</h4>
                     <ul>
-                        <li><a href="#">about us</a></li>
+                        <li><a href="/AboutUs">about us</a></li>
                         <li><a href="#">our services</a></li>
                     </ul>
                 </div>

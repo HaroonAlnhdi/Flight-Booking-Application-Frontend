@@ -75,7 +75,7 @@ const SigninForm = (props) => {
           </div>
           <div>
             <button>Log In</button>
-            <p>Don't have an account?<Link to="/"> Register</Link></p>
+            <p>Don't have an account?<Link to="/signup"> Register</Link></p>
           </div>
               <div className="icon">
                 <FaFacebook className="social-icon" />

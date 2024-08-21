@@ -51,4 +51,17 @@ const deleteUser = async (userId) => {
   }
 };
 
-export default { index, show, update, deleteUser };
+const deleteTicket = async (bookingId, userId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${userId}/bookings/${bookingId}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      method: "DELETE",
+
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export default { index, show, update, deleteUser , deleteTicket };

@@ -48,6 +48,7 @@ const App = () => {
     authService.signout();
     setUser(null);
   };
+
   return (
     <>
       <NavBar user={user} handleSignout={handleSignout} />

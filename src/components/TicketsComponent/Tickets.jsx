@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import userServicr from "../../services/userServicr";
+import "./Tickets.css";
 
 const Tickets = () => {
   const { userId } = useParams();
@@ -15,6 +16,7 @@ const Tickets = () => {
     if (userId) fetchUser();
   }, [userId]);
 
+    // to display the date and time in a more readable format
     const formatDateTime = (dateTime) => {
     const date = new Date(dateTime);
     const optionsDate = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -28,7 +30,14 @@ const Tickets = () => {
   if (!userData) {
     return <h1>Loading...</h1>;
   }
-  console.log(userData);
+
+  const handleDelete = async (bookingId,userId) => {   
+    console.log(bookingId);
+    console.log(userId);
+    
+    await userServicr.deleteTicket(bookingId, userId);
+
+  }
 
   return (
     <section className="container booking-info">
@@ -78,6 +87,10 @@ const Tickets = () => {
             <p><span className="displayinfo">Qty:</span> {booking.Qty}</p>
             <p><span className="displayinfo">Duration:</span> {Math.floor(booking.trip.duration / 60)} hours {booking.trip.duration % 60} minutes</p>
             <p><span className="displayinfo">Price:</span> ${booking.price}</p>
+
+              <div className="btnticket">
+              <button className="btn btn-danger" onClick={() => handleDelete(booking._id,userData._id)}>Delete</button>
+              </div>
           </section>
         </article>
       );

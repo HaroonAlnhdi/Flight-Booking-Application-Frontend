@@ -82,7 +82,7 @@ input#email{
 
 .cardPic{
     background-color: #6366F1;
-    border: 1px solid #6366F1;
+    /* border: 1px solid #6366F1; */
     border-radius: 20px;
     margin-top: 10px;
     width: 55%;
