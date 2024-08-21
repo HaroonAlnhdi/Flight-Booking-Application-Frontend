@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
-import { FaMapMarkerAlt, FaEnvelope, FaPhone,FaSearch } from "react-icons/fa";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone,FaSearch,FaPlane, FaCalendarAlt } from "react-icons/fa";
 const Dashboard = ({ tripData, setselectedTrip }) => {
   const navigate = useNavigate();
   const [fromInput, setFromInput] = useState("");
@@ -37,12 +37,18 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
           <h1>A Great Experience</h1>
           <img src="/pic/home.jpg" alt="flightHeader " />
         </div>
-        <div className="flight-booking-form-conta"> 
-        <h2>Booking a flight</h2>
-        <div className="flight-booking-form">
 
+        <div className="centerr">
+        <div className="flight-booking-form-conta"> 
+        <h2>Travel the world with us</h2>
+
+        <div className="flight-booking-form">
+       
           <form onSubmit={handleSubmit}>
-            <label htmlFor="From">From</label>
+            <div className="rowSearch">
+            <label htmlFor="From">
+           From <FaPlane />
+              </label>
             <select name="From" id="From" onChange={handelChange}>
               <option value="">Select Departure</option>
               {tripData.map((trip, index) => (
@@ -52,8 +58,12 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
                 </option>
               ))}
             </select>
+            </div>
 
-            <label htmlFor="To">To</label>
+            <div className="rowSearch"> 
+            <label htmlFor="To">
+              To <FaMapMarkerAlt />
+              </label>
             <select name="To" id="To" onChange={handleChangeTo}>
               <option value="">Select Arrival</option>
               {filteredToOptions.map((trip, index) => (
@@ -63,9 +73,20 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
                 </option>
               ))}
             </select>
+            </div>
+            <div className="rowSearch">
+            <label htmlFor="departure-date">Departure Date <FaCalendarAlt /></label>
+              <input type="date" id="departure-date" />
+                </div>
 
+                <div className="rowSearch">
+              <label htmlFor="return-date">Return Date <FaCalendarAlt /></label>
+              <input type="date" id="return-date" />
+            </div>
             {isFormValid ? <button type="submit">Search <FaSearch /></button> : ""}
           </form>
+        </div>
+        
         </div>
         </div>
       </section>

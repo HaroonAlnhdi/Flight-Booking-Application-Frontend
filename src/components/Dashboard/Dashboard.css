@@ -25,65 +25,80 @@
 
 /* form section */
 
-
+.centerr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .flight-booking-form-conta{
-    
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        /* background: url("https://i.pinimg.com/564x/c6/30/87/c63087b3c910e526a28c1a47c44cdff6.jpg") */
-         /* no-repeat center center/cover; */
+    /* background-color: #f7f7f7; */
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    border: 1px solid #ccc;
+    box-shadow: 0px 5px 24.25px 0.75px rgba(0,0,0,0.1);
+    border-radius: 20px;
 }
 
 .flight-booking-form-conta h2 {
+    margin-top: 15px;
     color: #6366f1;
     font-weight: 600;
+    text-align: center;
 }
-.flight-booking-form{
 
-    width: 55%;
+.flight-booking-form {
     display: flex;
     justify-content: center;
-    /* flex-direction: column; */
+    align-items: center;
     padding: 20px;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    border: #6366F1 2px solid;
-    border-radius: 25px  25px  30px 50px;
-    box-shadow: 0px 5px 24.25px 0.75px rgba(0,0,0,0.5);
-}
-
-.flight-booking-form select{
-
-
-    padding: 0.7rem;
-    margin: 0.1rem;
-    border: 1px solid #6366f1;
+    border-radius: 10px;
+  }
+  
+  .flight-booking-form form {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .rowSearch {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .rowSearch label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .rowSearch select, .rowSearch input {
+    width: 95%;
+    padding: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none ;
-    width: 100%;
+  }
+
+  .flight-booking-form input[type="date"] {
+    color: #333;
+  }
+  
+  .flight-booking-form button {
+    align-self: center;
+    width: 30%;
+    margin: 0 !important;
 }
+  
 
 
-
-.flight-booking-form button{
-        text-align: center;
-        width: 30%;
-        padding: 0.5rem;
-        margin: 1rem;
-        outline: none;
-        cursor: pointer;
-
-}
 
 
 /* explore section */
 .explor-sec h2{
+    margin-top: 30px;
     color: #6366f1;
     font-weight: 600;
 
@@ -169,6 +184,18 @@
     margin-bottom: 1rem;
   }
 
+  @media screen and (max-width: 999px) {
+    .flight-booking-form button {
+        padding: 10px 20px;
+        font-size: 13px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        align-self: flex-end;
+        margin-bottom: 20px;
+
+    }
+  }
 
 @media screen and (max-width: 768px) {
     .flight-booking-form {
@@ -180,9 +207,27 @@
         height: auto;
     }
 
-    .contactSec {
-        margin-left: 0;
-    }
+   
+
+    .flight-booking-form {
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      
+      .flight-booking-form form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      
+      .rowSearch {
+        /* display: flex; */
+        flex-direction: column;
+      }
 }
 
 @media screen and (max-width: 480px) {
@@ -201,11 +246,18 @@
         height: auto;
     }
 
-    .contactSec {
-        margin-left: 1px;
+ 
+
+    .flight-booking-header img {
+        width: 80%;
+        height: 35vh;
+        border-radius: 50%;
+        margin-bottom: 2rem;
     }
 
 }
 
 
 
+  
+ 
