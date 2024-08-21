@@ -145,39 +145,58 @@
     display: block
 }
 
-/* .card-cont a {
-    display: block;
-    text-decoration: none;
-    width: 80px;
-    height: 30px;
-    background-color: #D8DDE0;
-    color: #fff;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 2px;
-    position: absolute;
-    right: 10px;
-    bottom: 10px
-} */
-
+.booking-info h1 {
+    margin-top: 30px;
+}
 
 .booking-info button{
 
     color: #fff;
 }
 
-@media screen and (max-width: 860px) {
-    .card {
-        display: block;
-        float: none;
+@media(max-width: 991px) {
+    .booking-info .card {
+        width: 100%
+    }
+    .date {
         width: 100%;
-        margin-bottom: 10px
+        border-right: none
     }
-    .card+.card {
-        margin-left: 0
+
+    .card-cont {
+        width: 100%;
+        padding: 30px 20px
     }
-    .card-cont .even-date,
-    .card-cont .even-info {
-        font-size: 75%
+
+    .card-cont h3 {
+        font-size: 110%
+    }
+
+  
+}
+
+@media (max-width: 480px ) {
+    .booking-info h1 {
+        font-size: 24px
+    }
+
+    .card-cont h3 {
+        font-size: 24px
+    }
+
+    .card-cont {
+        padding: 30px 10px
+    }
+
+    .date time span:first-child {
+        font-size: 200%
+    }
+
+    .date time span:last-child {
+        font-size: 80%
+    }
+
+    .booking-info .card {
+        width: 90%
     }
 }

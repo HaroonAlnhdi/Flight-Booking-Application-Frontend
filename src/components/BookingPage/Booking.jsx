@@ -72,6 +72,8 @@ const Booking = ({ selectedTrip, ticketsData, user }) => {
 
     <section className="container booking-info">
       <h1>Booking</h1>
+      <p>Secure your next adventure with our hassle-free flight booking service. Choose your destination, select your travel dates, and enjoy a smooth journey. Book now and start planning your next trip!</p>
+
       <div className="booking-column">
         {ticketsData.map((trip, index) => (
           <article className="card fl-left" key={index}>
