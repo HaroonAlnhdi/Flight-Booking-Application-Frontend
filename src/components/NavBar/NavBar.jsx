@@ -1,6 +1,6 @@
 import React from "react";
 // import { useState } from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { MdAirplaneTicket } from "react-icons/md";
 import "./NavBar.css";
@@ -17,8 +17,9 @@ const MyNavbar = ({ user, handleSignout }) => {
 
   return (
     <Navbar collapseOnSelect expand="lg" className=" bg-light bg-gradient">
+      <Container>
       <Navbar.Brand as={Link} to="/">
-        <img src="/pic/flight1.png" alt="Logo" className="logo" />
+        <img src="/pic/logo.png" alt="Logo" className="logo" /> Flight Booking
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -64,6 +65,7 @@ const MyNavbar = ({ user, handleSignout }) => {
           )}
         </Nav>
       </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 };
