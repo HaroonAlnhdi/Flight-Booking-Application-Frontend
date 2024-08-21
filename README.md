@@ -51,3 +51,79 @@ With its user-friendly interface and reliable functionality, the Flight Booking 
 * MongoDB
 * bootstrap
 ***
+
+<h2 align="center">Getting Started</h2>
+
+##### The project itself was deployed and can be viewed [here](https://fitness-managment-app-644035c9a7b8.herokuapp.com/).
+
+***
+
+<h2 align="center">Screenshots</h2>
+
+<p align="center"><b>ERD</b></p>
+
+<p align="center">
+<img src="public/images/ERD.png" alt="drawing" width="800" height="400"/>
+</p>
+
+<p align="center">The ERD  </p>
+
+<p align="center">
+<img src="public/images/signup.png" alt="drawing" width="800" height="400"/>
+</p>
+Sign up
+<p align="center">
+<img src="public/images/login.png" alt="drawing" width="800" height="400"/>
+</p>
+login
+
+<p align="center">
+<img src="public/images/homep.png" alt="drawing" width="800" height="400"/>
+</p>
+<p align="center">The landing page   </p>
+
+<p align="center">
+<img src="public/images/booking.png" alt="drawing" width="800" height="400"/>
+</p>
+
+
+
+### ***Future Updates***
+
+- [  ] support multi-city and round-trip bookings.
+- [  ] Implement an AI-driven recommendation system that suggests flights, destinations, and services based on user preferences, travel history, and trends.
+
+- [  ] Enable users to share their flight bookings and travel plans directly on social media platforms
+- [x] Implement a system for users to provide feedback.
+
+***
+### ***Credits***
+
+##### excalidraw for design UI of  the app: [excalidraw ](https://excalidraw.com/)
+##### UUDI: [UUDI for session](https://www.uuidgenerator.net/)
+
+##### Javascript Reference: [JS Search](https://www.thaicreate.com/javascript-manual/index.htm)
+
+##### Colors: [Coolors.com](https://coolors.co/d6e681-babf95-c4ad83-c6b677-dbb957)
+
+##### Icoins: [fontawesome.com](https://fontawesome.com/search)
+##### HTML elements reference: [developer.mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+
+***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
