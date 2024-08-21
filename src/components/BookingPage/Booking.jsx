@@ -112,10 +112,14 @@ const Booking = ({ selectedTrip, ticketsData, user }) => {
                 <div className="even-date">
                   <i className="fa fa-calendar"></i>
                   <time>
-                    <span>{depDateTime.date}</span>
-                    <span>{depDateTime.time}</span>
-                    <span>{arrDateTime.date}</span>
-                    <span>{arrDateTime.time}</span>
+                    <div className="dateTime">
+                    <p>Departure date<span>{depDateTime.date}</span></p>
+                    <p>Arrival date<span>{arrDateTime.date}</span></p>
+                    </div>
+                    <div className="dateTime">
+                    <p>Departure time<span>{depDateTime.time}</span></p>
+                    <p>Arrival Time<span>{arrDateTime.time}</span></p>
+                    </div>
                   </time>
                 </div>
                 <div className="even-info">
@@ -131,7 +135,8 @@ const Booking = ({ selectedTrip, ticketsData, user }) => {
                 >
                   <label htmlFor="Qty">Quantity:</label>
                   <input required defaultValue={1} type="number" name="Qty" id="Qty" />
-                  <p><span className="displayinfo">Duration:</span> {trip.duration % 60 %60 } hours </p>
+                  <p> <span className="displayinfo">Duration:</span>{" "}
+                  {Math.floor(trip.duration / 60)} hours {trip.duration % 60} minutes </p>
                   <p><span className="displayinfo">Price:</span> {trip.price} BD</p>
                   <button type="submit">Booking</button>
                 </form>

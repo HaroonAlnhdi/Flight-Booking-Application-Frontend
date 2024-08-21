@@ -154,12 +154,24 @@
     color: #fff;
 }
 
+
+.dateTime{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 @media(max-width: 991px) {
+
+    .booking-info  {
+        width: 90%
+    }
     .booking-info .card {
         width: 100%
     }
     .date {
-        width: 100%;
+        width: 30%;
         border-right: none
     }
 
@@ -176,7 +188,11 @@
 }
 
 @media (max-width: 480px ) {
-    .booking-info h1 {
+    .booking-info .card {
+        display: block;
+        width: 100%
+    }
+    /* .booking-info h1 {
         font-size: 24px
     }
 
@@ -186,17 +202,9 @@
 
     .card-cont {
         padding: 30px 10px
-    }
+    } */
 
-    .date time span:first-child {
-        font-size: 200%
-    }
 
-    .date time span:last-child {
-        font-size: 80%
-    }
 
-    .booking-info .card {
-        width: 90%
-    }
+
 }
