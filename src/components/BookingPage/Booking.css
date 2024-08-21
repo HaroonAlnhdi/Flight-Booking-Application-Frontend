@@ -19,7 +19,20 @@
     margin-bottom: 30px
 }
 
-.row {
+.displayinfo{
+    color: #6366f1;
+}
+
+.booking-column {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
     overflow: hidden
 }
 
@@ -27,8 +40,8 @@
     display: table-row;
     width: 49%;
     background-color: #fff;
-    color: #989898;
-    margin-bottom: 10px;
+    color: #000000;
+    margin-bottom: 40px;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     border-radius: 4px;
@@ -132,7 +145,7 @@
     display: block
 }
 
-.card-cont a {
+/* .card-cont a {
     display: block;
     text-decoration: none;
     width: 80px;
@@ -145,14 +158,12 @@
     position: absolute;
     right: 10px;
     bottom: 10px
-}
+} */
 
-.row:last-child .card:first-child .card-cont a {
-    background-color: #037FDD
-}
 
-.row:last-child .card:last-child .card-cont a {
-    background-color: #F8504C
+.booking-info button{
+
+    color: #fff;
 }
 
 @media screen and (max-width: 860px) {

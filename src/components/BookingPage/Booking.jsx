@@ -72,7 +72,7 @@ const Booking = ({ selectedTrip, ticketsData, user }) => {
 
     <section className="container booking-info">
       <h1>Booking</h1>
-      <div className="row">
+      <div className="booking-column">
         {ticketsData.map((trip, index) => (
           <article className="card fl-left" key={index}>
             <section className="date">
@@ -85,10 +85,11 @@ const Booking = ({ selectedTrip, ticketsData, user }) => {
                 </span>
               </time>
             </section>
+
             <section className="card-cont">
               <small>{trip.dep_airport}</small>
               <h3>
-                {trip.dep_airport} to {trip.arr_airport}
+              <span className="displayinfo"> {trip.dep_airport} </span> to <span className="displayinfo"> {trip.arr_airport} </span>
               </h3>
               <div className="even-date">
                 <i className="fa fa-calendar"></i>
@@ -100,22 +101,22 @@ const Booking = ({ selectedTrip, ticketsData, user }) => {
               <div className="even-info">
                 <i className="fa fa-map-marker"></i>
                 <p>
-                  Departure: {trip.dep_airport_IATA}, Arrival:{" "}
-                  {trip.arr_airport_IATA}
+                <span className="displayinfo"> Departure:</span> {trip.dep_airport_IATA}    
+                <span className="displayinfo"> Arrival: </span>{" "}{trip.arr_airport_IATA}
                 </p>
               </div>
-              <p>Available :{trip.tickets}</p>
+              <p><span className="displayinfo">Available :</span>{trip.tickets}</p>
               <form
                 onSubmit={(e) => handleSubmit(e, trip._id, e.target.Qty.value)}
               >
                 <label htmlFor="Qty">Quantity:</label>
-                <input type="number" name="Qty" id="Qty" />
-                <p>Duration: {trip.duration}</p>
-                <p>Price: {trip.price}</p>
-                <button type="submit">ADD</button>
+                <input required defaultValue={1} type="number" name="Qty" id="Qty" />
+                <p><span className="displayinfo">Duration:</span> {trip.duration % 60 %60 } hours </p>
+                <p><span className="displayinfo">Price:</span> {trip.price} BD</p>
+                <button type="submit">Booking</button>
               </form>
             </section>
-            {index < ticketsData.length - 1 && <hr />}
+            {/* {index < ticketsData.length - 1 && <hr />} */}
           </article>
         ))}
       </div>
