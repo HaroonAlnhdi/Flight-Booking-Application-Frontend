@@ -6,7 +6,7 @@ const AboutUs = () => {
     <div className="about-us">
       <section className="hero-section">
         <div className="hero-content">
-          <h1>Welcome to MyBrand Airlines</h1>
+          <h1>Welcome to Fight Booking </h1>
           <p>
             Discover our journey, mission, and the values that set us apart in
             the skies.
@@ -28,7 +28,7 @@ const AboutUs = () => {
         <div className="info-card fade-in">
           <h2>Our Mission</h2>
           <p>
-            At MyBrand Airlines, our mission is to connect people and places
+            At Flight Booking , our mission is to connect people and places
             with unparalleled service. We are committed to providing safe,
             reliable, and enjoyable flights while contributing to the
             communities we serve. Our team of dedicated professionals is focused
@@ -69,7 +69,7 @@ const AboutUs = () => {
       <section className="meet-team info-card">
         <h2 className="section-title">Meet Our Team</h2>
         <p>
-          Our team is the backbone of MyBrand Airlines. From our experienced
+          Our team is the backbone of Flight Booking  Airlines. From our experienced
           pilots to our friendly cabin crew and dedicated ground staff, each
           member plays a crucial role in delivering exceptional service. We are
           proud of our diverse and talented team, who share a common goal of

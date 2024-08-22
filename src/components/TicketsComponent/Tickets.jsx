@@ -47,101 +47,103 @@ const Tickets = () => {
 
   return (
     <section className="container booking-info">
-      <h1>Tickets</h1>
-      <p></p>
+  <h1>Tickets</h1>
 
-      <div className="booking-column">
-        {userData.bookings.map((booking) => {
-          const depDateTime = new Date(booking.depTripDate);
-          const arrDateTime = new Date(booking.arrTripDate);
+  {userData.bookings.length === 0 ? (
+    <p>No tickets available. Please book a trip.</p>
+  ) : (
+    <div className="booking-column">
+      {userData.bookings.map((booking) => {
+        const depDateTime = new Date(booking.depTripDate);
+        const arrDateTime = new Date(booking.arrTripDate);
 
-          return (
-            <article className="card fl-left" key={booking._id}>
-              <section className="date">
-                <time dateTime={booking.depTripDate}>
-                  <span>{depDateTime.getDate()}</span>
-                  <span>
-                    {depDateTime.toLocaleString("default", { month: "short" })}
-                  </span>
+        return (
+          <article className="card fl-left" key={booking._id}>
+            <section className="date">
+              <time dateTime={booking.depTripDate}>
+                <span>{depDateTime.getDate()}</span>
+                <span>
+                  {depDateTime.toLocaleString("default", { month: "short" })}
+                </span>
+              </time>
+            </section>
+
+            <section className="card-cont">
+              <small>{booking.trip.dep_airport}</small>
+              <h3>
+                <span className="displayinfo">
+                  {booking.trip.dep_airport}
+                </span>{" "}
+                to{" "}
+                <span className="displayinfo">
+                  {booking.trip.arr_airport}
+                </span>
+              </h3>
+              <div className="even-date">
+                <i className="fa fa-calendar"></i>
+                <time>
+                  <div className="dateTime">
+                    <p>
+                      Departure date{" "}
+                      <span>{depDateTime.toLocaleDateString()}</span>
+                    </p>
+                    <p>
+                      Arrival date{" "}
+                      <span>{arrDateTime.toLocaleDateString()}</span>
+                    </p>
+                  </div>
+                  <div className="dateTime">
+                    <p>
+                      Departure time{" "}
+                      <span>{depDateTime.toLocaleTimeString()}</span>
+                    </p>
+                    <p>
+                      Arrival Time{" "}
+                      <span>{arrDateTime.toLocaleTimeString()}</span>
+                    </p>
+                  </div>
                 </time>
-              </section>
+              </div>
+              <div className="even-info">
+                <i className="fa fa-map-marker"></i>
+                <p>
+                  <span className="displayinfo"> Departure:</span>{" "}
+                  {booking.trip.dep_airport_IATA}
+                  <span className="displayinfo"> Arrival: </span>{" "}
+                  {booking.trip.arr_airport_IATA}
+                </p>
+              </div>
+              <p>
+                <span className="displayinfo">Qty:</span> {booking.Qty}
+              </p>
+              <p>
+                <span className="displayinfo">Duration:</span>{" "}
+                {Math.floor(booking.trip.duration / 60)} hours{" "}
+                {booking.trip.duration % 60} minutes
+              </p>
+              <p>
+                <span className="displayinfo">Price:</span> ${booking.price}
+              </p>
+              <p className="TotalPrice">Total Price: {booking.price * booking.Qty}</p>
 
-              <section className="card-cont">
-                <small>{booking.trip.dep_airport}</small>
-                <h3>
-                  <span className="displayinfo">
-                    {" "}
-                    {booking.trip.dep_airport}{" "}
-                  </span>{" "}
-                  to{" "}
-                  <span className="displayinfo">
-                    {" "}
-                    {booking.trip.arr_airport}{" "}
-                  </span>
-                </h3>
-                <div className="even-date">
-                  <i className="fa fa-calendar"></i>
-                  <time>
-                    <div className="dateTime">
-                      <p>
-                        Departure date{" "}
-                        <span>{depDateTime.toLocaleDateString()}</span>
-                      </p>
-                      <p>
-                        Arrival date{" "}
-                        <span>{arrDateTime.toLocaleDateString()}</span>
-                      </p>
-                    </div>
-                    <div className="dateTime">
-                      <p>
-                        Departure time{" "}
-                        <span>{depDateTime.toLocaleTimeString()}</span>
-                      </p>
-                      <p>
-                        Arrival Time{" "}
-                        <span>{arrDateTime.toLocaleTimeString()}</span>
-                      </p>
-                    </div>
-                  </time>
-                </div>
-                <div className="even-info">
-                  <i className="fa fa-map-marker"></i>
-                  <p>
-                    <span className="displayinfo"> Departure:</span>{" "}
-                    {booking.trip.dep_airport_IATA}
-                    <span className="displayinfo"> Arrival: </span>{" "}
-                    {booking.trip.arr_airport_IATA}
-                  </p>
-                </div>
-                <p>
-                  <span className="displayinfo">Qty:</span> {booking.Qty}
-                </p>
-                <p>
-                  <span className="displayinfo">Duration:</span>{" "}
-                  {Math.floor(booking.trip.duration / 60)} hours{" "}
-                  {booking.trip.duration % 60} minutes
-                </p>
-                <p>
-                  <span className="displayinfo">Price:</span> ${booking.price}
-                </p>
-                <p className="TotalPrice">Total Price: {booking.price * booking.Qty}</p>
+              <div className="btnticket">
+                <button
+                  className="btn btn-danger"
+                  onClick={(event) =>
+                    handleDelete(booking._id, userData._id, event)
+                  }
+                >
+                  Delete
+                </button>
+              </div>
+            </section>
+          </article>
+        );
+      })}
+    </div>
+  )}
+</section>
 
-                <div className="btnticket">
-                  <button
-                    className="btn btn-danger"
-                    onClick={(event) =>
-                      handleDelete(booking._id, userData._id, event)
-                    }
-                  >
-                    Delete
-                  </button>
-                </div>
-              </section>
-            </article>
-          );
-        })}
-      </div>
-    </section>
   );
 };
 
