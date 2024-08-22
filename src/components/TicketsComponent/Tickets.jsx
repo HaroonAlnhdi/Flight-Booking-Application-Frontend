@@ -124,6 +124,7 @@ const Tickets = () => {
                 <p>
                   <span className="displayinfo">Price:</span> ${booking.price}
                 </p>
+                <p className="TotalPrice">Total Price: {booking.price * booking.Qty}</p>
 
                 <div className="btnticket">
                   <button
@@ -136,7 +137,6 @@ const Tickets = () => {
                   </button>
                 </div>
               </section>
-              <p>Total Price: {booking.price * booking.Qty}</p>
             </article>
           );
         })}
