@@ -79,10 +79,7 @@ const Dashboard = ({ tripData, setselectedTrip }) => {
               <input type="date" id="departure-date" />
                 </div>
 
-                <div className="rowSearch">
-              <label htmlFor="return-date">Return Date <FaCalendarAlt /></label>
-              <input type="date" id="return-date" />
-            </div>
+               
             {isFormValid ? <button type="submit">Search <FaSearch /></button> : ""}
           </form>
         </div>
