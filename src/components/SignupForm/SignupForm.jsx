@@ -29,7 +29,6 @@ const SignupForm = (props) => {
     e.preventDefault();
     try {
       updateMessage("");
-      console.log(authService);
       const newUserResponse = await authService.signup(formData);
       props.setUser(newUserResponse.user);
       navigate("/signin");
@@ -129,7 +128,7 @@ const SignupForm = (props) => {
                   id="phone_number"
                   value={phone_number}
                   name="phone_number"
-                  max={8}
+                  maxLength={8}
                   onChange={handleChange}
                 />
               </div>
@@ -138,7 +137,7 @@ const SignupForm = (props) => {
               <div className="form-group">
                 <label htmlFor="email">Email:</label>
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   value={email}
                   name="email"
