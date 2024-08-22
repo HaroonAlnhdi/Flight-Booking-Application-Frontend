@@ -4,6 +4,7 @@ import userServicr from "../../services/userServicr";
 import "./Tickets.css";
 
 const Tickets = () => {
+  const totalPrice = 0;
   const { userId } = useParams();
   const [userData, setUserData] = useState(null);
 
@@ -135,6 +136,7 @@ const Tickets = () => {
                   </button>
                 </div>
               </section>
+              <p>Total Price: {booking.price * booking.Qty}</p>
             </article>
           );
         })}
