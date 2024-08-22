@@ -50,7 +50,7 @@ const Tickets = () => {
   <h1>Tickets</h1>
 
   {userData.bookings.length === 0 ? (
-    <p>No tickets available. Please book a trip.</p>
+   <div className="Notickt"> No tickets available. Please book a trip.</div>
   ) : (
     <div className="booking-column">
       {userData.bookings.map((booking) => {
