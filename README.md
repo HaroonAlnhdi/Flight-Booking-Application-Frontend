@@ -54,7 +54,7 @@ With its user-friendly interface and reliable functionality, the Flight Booking 
 
 <h2 align="center">Getting Started</h2>
 
-##### The project itself was deployed and can be viewed [here](https://fitness-managment-app-644035c9a7b8.herokuapp.com/).
+##### The project itself was deployed and can be viewed [Flight Booking Appliction](https://flight-booking-psi.vercel.app/).
 
 ***
 
