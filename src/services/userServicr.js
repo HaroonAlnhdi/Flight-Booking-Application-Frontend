@@ -17,7 +17,6 @@ const show = async (userId) => {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
 
-    
     return res.json();
   } catch (error) {
     console.error(error);
@@ -30,6 +29,7 @@ const update = async (formData, userId) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify(formData),
     });
@@ -56,12 +56,11 @@ const deleteTicket = async (bookingId, userId) => {
     const res = await fetch(`${BASE_URL}/${userId}/bookings/${bookingId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       method: "DELETE",
-
     });
     return res.json();
   } catch (error) {
     console.error(error);
   }
-}
+};
 
-export default { index, show, update, deleteUser , deleteTicket };
+export default { index, show, update, deleteUser, deleteTicket };
